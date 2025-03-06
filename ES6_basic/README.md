@@ -1,0 +1,1 @@
+This is the readme for ES6_basic. This directory contain my files for learning the basics of ES6_basic.
