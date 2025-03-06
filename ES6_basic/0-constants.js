@@ -2,5 +2,5 @@
     const taskFirst = 'I prefer const when I can.';
 }
 {
-    let 
+    let taskNext = 'But sometimes let';
 }
