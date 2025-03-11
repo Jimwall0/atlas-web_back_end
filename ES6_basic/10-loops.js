@@ -1,6 +1,9 @@
 export default function appendToEachArrayValue(array, appendString) {
+  let num = 0;
+  let temp = [];
   for (const idx of array) {
-    array[idx] = `${appendString}-${idx}`;
+    temp[num] = `${appendString}${idx}`;
+    num += 1;
   }
-  return array;
+  return temp;
 }
