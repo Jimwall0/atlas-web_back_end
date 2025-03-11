@@ -1,9 +1,9 @@
 export default function createReportObject(employeesList) {
   return {
     allEmployees: employeesList,
-    getNumberOfDepartments() {
+    getNumberOfDepartments(object) {
       let num = 0
-      for (const department of this.allEmployees){
+      for (const key of Object.keys(object)){
         num += 1;
       }
       return num;
