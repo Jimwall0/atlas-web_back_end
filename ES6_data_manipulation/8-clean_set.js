@@ -1,13 +1,9 @@
-const cleanSet = (set, startString) => {
-  let check = startString;
-  if (check === undefined) {
-    check = '';
-  }
+const cleanSet = (set, startString = '') => {
   const setArray = [...set];
   let string = '';
   for (let i = 0; i < setArray.length; i += 1) {
     const x = setArray[i];
-    if (x.startsWith(check) && check !== '') {
+    if (x.startsWith(startString) && startString !== '') {
       if (i === 0) {
         string = x.slice(3);
       } else {
