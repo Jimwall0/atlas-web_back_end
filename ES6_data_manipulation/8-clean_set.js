@@ -1,5 +1,5 @@
 const cleanSet = (set, startString) => {
-  if (startString === undefined) {
+  if (startString === undefined || typeof startString !== 'string') {
     return '';
   }
   const setArray = [...set];
