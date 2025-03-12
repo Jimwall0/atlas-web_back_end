@@ -1,4 +1,7 @@
-const cleanSet = (set, startString = '') => {
+const cleanSet = (set, startString) => {
+  if (startString === undefined) {
+    return '';
+  }
   const setArray = [...set];
   let string = '';
   for (let i = 0; i < setArray.length; i += 1) {
