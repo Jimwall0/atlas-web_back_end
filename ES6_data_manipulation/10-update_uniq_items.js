@@ -4,6 +4,6 @@ const updateUniqueItems = (groceriesList) => {
       groceriesList.set(key, 100);
     }
   }
-}
+};
 
 export default updateUniqueItems;
