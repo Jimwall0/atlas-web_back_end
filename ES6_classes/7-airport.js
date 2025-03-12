@@ -32,7 +32,11 @@ export default class Airport {
     this._code = value;
   }
 
-  get toString() {
+  get [Symbol.toStringTag]() {
+    return this.code;
+  }
+
+  toString() {
     return `[object ${this.code}]`;
   }
 }
