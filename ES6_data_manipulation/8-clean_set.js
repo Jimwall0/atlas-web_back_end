@@ -1,7 +1,4 @@
 const cleanSet = (set, startString = '') => {
-  if (typeof startString !== 'string') {
-    throw new TypeError('StartString needs to be a string');
-  }
   const setArray = [...set];
   let string = '';
   for (let i = 0; i < setArray.length; i += 1) {
