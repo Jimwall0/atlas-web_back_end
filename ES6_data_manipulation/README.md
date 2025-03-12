@@ -1,0 +1,1 @@
+This is the readnme for es6 data manipulation.
