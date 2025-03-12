@@ -1,12 +1,13 @@
 const getResponseFromAPI = () => {
-  return new Promise((resolve, reject) => {
+  const test = new Promise((resolve, reject) => {
     const success = true;
     if (success) {
       resolve('Success');
     } else {
-      reject('Failure');
+      reject(new Error('Failure'));
     }
   });
+  return test;
 };
 
 export default getResponseFromAPI;
