@@ -1,7 +1,7 @@
 const handleResponseFromAPI = (promise) => {
   promise.then((success) => {
     console.log('Got a response from the API');
-    resovle({
+    resolve({
       status: 200,
       body: success,
     });
