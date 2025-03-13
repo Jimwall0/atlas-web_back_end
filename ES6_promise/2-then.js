@@ -1,14 +1,14 @@
 const handleResponseFromAPI = (promise) => {
   promise.then((success) => {
     console.log('Got a response from the API');
-    return {
+    resovle({
       status: 200,
       body: success,
-    };
+    });
   });
   promise.catch(() => {
     console.log('Got a response from the API');
-    return new Error();
+    reject(new Error());
   });
 };
 
