@@ -8,6 +8,12 @@ from typing import Callable
 
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
+    """
+    Makes a new function to multiply
+    """
     def temp(number: float):
+        """
+        Actual function that multiplies
+        """
         return number * multiplier
     return temp
