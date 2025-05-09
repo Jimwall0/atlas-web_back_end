@@ -8,5 +8,5 @@ def element_length(lst):
 from typing import Iterator, List, Tuple, Sequence
 
 
-def element_length(lst: Iterator[Sequence[int]]) -> List[Tuple[Sequence[int], int]]:
+def element_length(lst: Iterator[Sequence]) -> List[Tuple[Sequence, int]]:
     return [(i, len(i)) for i in lst]
