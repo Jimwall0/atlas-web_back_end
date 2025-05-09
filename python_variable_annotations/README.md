@@ -4,11 +4,11 @@ A breif set of python projects to relearn the basics of python. Additionaly lear
 
 ## Installation
 
-Instructions for setting up your project locally.
+Instructions for viewing locally
 
 ```bash
 # Clone the repository
-git clone https://github.com/Jimwall0/atlas-web_back_end/tree/main/
+git clone https://github.com/Jimwall0/atlas-web_back_end.git
 
 # Navigate into the directory
 cd python_variable_annotations
