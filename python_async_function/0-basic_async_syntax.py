@@ -12,11 +12,11 @@ import random
 import asyncio
 
 
-async def wait_random(max_delay: 10):
+async def wait_random(max_delay: 10) -> float:
     """
     A simple courtine that makes a random delay between
     0 to 10 and returns it
     """
-    delay = random(0, max_delay)
+    delay = float(random(0, max_delay))
     await asyncio.sleep(delay)
     return delay
