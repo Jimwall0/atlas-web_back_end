@@ -15,6 +15,9 @@ wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
+    """
+    Makes a list of corotines and sorts them concurrently
+    """
     waitList = []
     tempList = []
     for i in range(n):
