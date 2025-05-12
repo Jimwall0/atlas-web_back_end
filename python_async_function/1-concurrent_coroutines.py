@@ -16,8 +16,9 @@ wait_random = __import__('0-basic_async_syntax').wait_random
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
     waitList = []
-    async with asyncio.TaskGroup() as tg:
-        for i in range(n):
-            task = tg.create_task(wait_random(max_delay))
-            waitList.append(task)
+    tempList = []
+    for i in range(n):
+        tempList.append(wait_random(max_delay))
+    for coro in asyncio.as_completed(tempList):
+        waitList.append(await coro)
     return waitList
