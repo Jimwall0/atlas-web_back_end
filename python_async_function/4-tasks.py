@@ -17,6 +17,9 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
 
 
 async def task_wait_n(n: int, max_delay: int) -> asyncio.Task:
+    """
+    Returns a number of corotine tasks
+    """
     tempList = []
     waitList = []
     for i in range(n):
