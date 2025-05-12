@@ -16,6 +16,6 @@ async def async_generator() -> List[float]:
     """
     tempList = []
     for i in range(10):
-        asyncio.sleep(1)
+        await asyncio.sleep(1)
         tempList.append(random.uniform(0, 10))
     return tempList
