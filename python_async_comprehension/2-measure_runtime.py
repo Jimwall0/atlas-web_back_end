@@ -22,7 +22,7 @@ async def async_comprehension() -> List[float]:
     return [i async for i in async_generator()]
 
 
-async def measure_runtime():
+async def measure_runtime() -> float:
     """
     Runs the program an extra 4 times
     """
