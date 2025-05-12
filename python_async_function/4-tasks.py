@@ -5,6 +5,7 @@ new function task_wait_n. The code is nearly identical
 to wait_n except task_wait_random is being called.
 """
 import asyncio
+from typing import List
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
@@ -16,7 +17,7 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
     return task
 
 
-async def task_wait_n(n: int, max_delay: int) -> asyncio.Task:
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
     Returns a number of corotine tasks
     """
