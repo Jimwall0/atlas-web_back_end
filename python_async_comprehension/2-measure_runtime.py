@@ -23,6 +23,9 @@ async def async_comprehension() -> List[float]:
 
 
 async def measure_runtime():
+    """
+    Runs the program an extra 4 times
+    """
     start_time = time.perf_counter()
     await asyncio.gather(*(async_comprehension() for _ in range(4)))
     end_time = time.perf_counter()
