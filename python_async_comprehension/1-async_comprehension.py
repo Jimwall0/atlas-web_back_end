@@ -13,4 +13,7 @@ lock = asyncio.Lock
 
 
 async def async_comprehension() -> List[float]:
+    """
+    Comprehension?
+    """
     return [i async for i in async_generator()]
