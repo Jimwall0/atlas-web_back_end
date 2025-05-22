@@ -19,10 +19,14 @@ class BasicCache(BaseCaching):
     Basic cache behavior?
     """
     def put(self, key, item):
-        if (key is None | item is None):
+        if (key is None or item is None):
             pass
         else:
             self.cache_data[key] = item
 
     def get(self, key):
-        return self.cache_data[key]
+        if key in self.cache_data:
+            if self.cache_data[key] is not None:
+                return self.cache_data[key]
+        else:
+            return None
