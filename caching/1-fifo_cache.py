@@ -53,4 +53,4 @@ class FIFOCache(BaseCaching):
             if len(self.cache_data) > self.MAX_ITEMS:
                 old_key = self.cache_list.pop()
                 self.cache_data.pop(old_key)
-                print(f"DISCARD:{old_key}\n")
+                print(f"DISCARD: {old_key}")
