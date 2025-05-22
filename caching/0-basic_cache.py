@@ -16,16 +16,21 @@ from base_caching import BaseCaching
 
 class BasicCache(BaseCaching):
     """
-    BasicCache inherits from BaseCaching to save some data values
-    It's also a caching system
+    Basic cache behavior?
     """
     def put(self, key, item):
+        """
+        Adds data to the dictionary
+        """
         if (key is None or item is None):
             pass
         else:
             self.cache_data[key] = item
 
     def get(self, key):
+        """
+        Retrieves data from the dictionary
+        """
         if key in self.cache_data:
             if self.cache_data[key] is not None:
                 return self.cache_data[key]
