@@ -17,6 +17,7 @@ from base_caching import BaseCaching
 class BasicCache(BaseCaching):
     """
     BasicCache inherits from BaseCaching to save some data values
+    It's also a caching system
     """
     def put(self, key, item):
         if (key is None or item is None):
