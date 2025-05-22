@@ -47,11 +47,10 @@ class FIFOCache(BaseCaching):
         """
         Adds a key value pair to both cache list and data
         """
-        if key is None or item is None:
-            pass
-        self.cache_data[key] = item
-        self.cache_list.insert(0, key)
-        if len(self.cache_data) >= self.MAX_ITEMS:
-            print(f"DISCARD: {self.cache_list[3]}\n")
-            self.cache_list.pop()
-            self.cache_data.popitem()
+        if key is not None and item is not None:
+            self.cache_data[key] = item
+            self.cache_list.insert(0, key)
+            if len(self.cache_data) > self.MAX_ITEMS:
+                print(f"DISCARD: {self.cache_list[3]}\n")
+                old_key = self.cache_list.pop(3)
+                self.cache_data.pop(old_key)
