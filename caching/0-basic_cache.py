@@ -23,7 +23,6 @@ class BasicCache(BaseCaching):
             pass
         else:
             self.cache_data[key] = item
-        
-    
+
     def get(self, key):
         return self.cache_data[key]
