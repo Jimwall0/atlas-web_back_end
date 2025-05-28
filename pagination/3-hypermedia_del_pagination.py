@@ -38,7 +38,7 @@ class Server:
 
     def get_hyper_index(
             self,
-            index: Union[int, None] = None,
+            index: int = None,
             page_size: int = 10
     ) -> Dict[str, Any]:
         """
