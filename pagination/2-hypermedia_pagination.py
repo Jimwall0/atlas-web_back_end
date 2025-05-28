@@ -44,8 +44,6 @@ class Server:
         return self.__dataset
     
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
-        assert isinstance(page, int) and page > 0
-        assert isinstance(page_size, int) and page_size > 0
         dictionary = {}
         dataset = self.dataset()
         dictionary["page_size"] = len(dataset)
