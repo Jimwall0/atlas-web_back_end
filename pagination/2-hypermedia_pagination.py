@@ -17,7 +17,6 @@ Make sure to reuse get_page in your implementation.
 You can use the math module if necessary.
 """
 import csv
-import math
 from typing import List
 from typing import Tuple
 from typing import Dict
@@ -42,7 +41,7 @@ class Server:
             self.__dataset = dataset[1:]
 
         return self.__dataset
-    
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
         dictionary = {}
         dataset = self.dataset()
