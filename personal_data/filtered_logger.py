@@ -32,7 +32,7 @@ def filter_datum(
         separator: str
 ) -> str:
     return re.sub(
-        f"({'|'.join(field)})=([^{separator}]*)",
-        f"\\1={redaction}",
+        rf"({'|'.join(field)})=([^{separator}]*)",
+        r"\1=" + redaction,
         message
     )
