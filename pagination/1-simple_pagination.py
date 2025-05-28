@@ -43,8 +43,8 @@ class Server:
         """
         Sets up the page for viewing
         """
-        assert page > 0 and page_size > 0
-        assert isinstance(page, int) and isinstance(page_size, int)
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
         start, end = index_range(page, page_size)
         dataset = self.dataset()
         if start >= len(dataset):
