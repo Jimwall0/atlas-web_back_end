@@ -46,12 +46,12 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
         dictionary = {}
         dataset = self.dataset()
-        dictionary["page_size"] = len(dataset)
+        dictionary["page_size"] = page_size
         dictionary["page"] = page
         dictionary["data"] = self.get_page(page, page_size)
         dictionary["next_page"] = page + 1 if page > 0 else None
         dictionary["prev_page"] = page - 1 if page > 1 else None
-        dictionary["total_pages"] = len(dataset) / page_size
+        dictionary["total_pages"] = int(len(dataset) / page_size)
         return dictionary
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
