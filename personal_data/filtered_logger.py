@@ -22,11 +22,11 @@ filter_datum should be less than 5 lines long and use
 re.sub to perform the substitution with a single regex.
 """
 import re
-from typing import List
+import typing
 
 
 def filter_datum(
-        field: List[str],
+        field: typing.List[str],
         redaction: str,
         message: str,
         separator: str
