@@ -41,7 +41,7 @@ class LRUCache(BaseCaching):
 
     def get(self, key):
         """
-        Returns elements and moves it up in the cache(LRU)
+        Returns elements and moves it up in the cache (LRU)
         """
         if key in self.cache_data:
             if self.cache_data[key] is not None:
