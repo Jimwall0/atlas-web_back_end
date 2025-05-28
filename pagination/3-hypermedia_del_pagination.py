@@ -60,7 +60,7 @@ class Server:
 
         page_size: the current page size
 
-        data: the actual page of the dataset  
+        data: the actual page of the dataset
         """
         assert isinstance(page_size, int) and page_size > 0
 
