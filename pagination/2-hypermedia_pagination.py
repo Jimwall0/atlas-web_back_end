@@ -21,7 +21,7 @@ import math
 from typing import List
 from typing import Tuple
 from typing import Dict
-from typing import Union
+from typing import Any
 
 
 class Server:
