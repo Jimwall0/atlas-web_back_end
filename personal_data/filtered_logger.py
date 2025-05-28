@@ -31,6 +31,9 @@ def filter_datum(
         message: str,
         separator: str
 ) -> str:
+    """
+    Returns a log message obfuscated
+    """
     return re.sub(
         rf"({'|'.join(fields)})=([^{separator}]*)",
         r"\1=" + redaction,
