@@ -43,6 +43,9 @@ class Server:
         return self.__dataset
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
+        """
+        Makes a dict for pagination
+        """
         dictionary = {}
         dataset = self.dataset()
         size = int(len(dataset) / page_size)
