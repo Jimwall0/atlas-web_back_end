@@ -26,13 +26,13 @@ import typing
 
 
 def filter_datum(
-        field: typing.List[str],
+        fields: typing.List[str],
         redaction: str,
         message: str,
         separator: str
 ) -> str:
     return re.sub(
-        rf"({'|'.join(field)})=([^{separator}]*)",
+        rf"({'|'.join(fields)})=([^{separator}]*)",
         r"\1=" + redaction,
         message
     )
