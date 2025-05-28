@@ -46,6 +46,7 @@ class Server:
         index with a None default value and page_size with default
         value of 10.
 
+        index: int = None, page_size: int = 10
         The method should return a dictionary with the following
         key-value pairs:
         index: the current start index of the return page. That is the
