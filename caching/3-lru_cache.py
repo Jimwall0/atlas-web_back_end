@@ -40,6 +40,9 @@ class LRUCache(BaseCaching):
                 print(f"DISCARD: {old_key}")
 
     def get(self, key):
+        """
+        Returns elements and moves it up in the cache(LRU)
+        """
         if key in self.cache_data:
             if self.cache_data[key] is not None:
                 self.cache_list.remove(key)
