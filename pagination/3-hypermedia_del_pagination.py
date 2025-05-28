@@ -3,7 +3,7 @@
 Deletion-resilient hypermedia pagination
 """
 import csv
-from typing import List, Dict, Any, Union
+from typing import List, Dict, Any
 
 
 class Server:
@@ -60,7 +60,6 @@ class Server:
         """
         assert isinstance(page_size, int) and page_size > 0
 
-        # Default index to 0 if None
         if index is None:
             index = 0
         else:
@@ -71,7 +70,6 @@ class Server:
         current = index
         count = 0
 
-        # Collect up to page_size valid rows, skipping deleted ones
         while (
             count < page_size
             and current < len(indexed_data) + page_size
