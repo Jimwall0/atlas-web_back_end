@@ -25,7 +25,6 @@ import re
 import logging
 import os
 import mysql.connector
-from mysql.connector.connection import MySQLConnection
 from typing import List
 
 PII_FIELDS = ("email", "name", "phone", "ssn", "password")
@@ -84,7 +83,7 @@ def filter_datum(
     )
 
 
-def get_db() -> MySQLConnection:
+def get_db():
     """
     Connects to a MySQL database using credentials from environment variables.
     Returns:
