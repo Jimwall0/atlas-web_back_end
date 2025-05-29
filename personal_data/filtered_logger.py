@@ -22,8 +22,10 @@ filter_datum should be less than 5 lines long and use
 re.sub to perform the substitution with a single regex.
 """
 import re
-import typing
 import logging
+import os
+import mysql.connector
+from mysql.connector.connection import MySQLConnection
 from typing import List
 
 PII_FIELDS = ("email", "name", "phone", "ssn", "password")
@@ -53,7 +55,7 @@ class RedactingFormatter(logging.Formatter):
         )
 
 
-def get_logger(self) -> logging.Logger:
+def get_logger() -> logging.Logger:
     """
     Sets up the logger
     """
@@ -67,7 +69,7 @@ def get_logger(self) -> logging.Logger:
 
 
 def filter_datum(
-        fields: typing.List[str],
+        fields: List[str],
         redaction: str,
         message: str,
         separator: str
@@ -79,4 +81,18 @@ def filter_datum(
         rf"({'|'.join(fields)})=([^{separator}]*)",
         r"\1=" + redaction,
         message
+    )
+
+
+def get_db() -> MySQLConnection:
+    """
+    Connects to a MySQL database using credentials from environment variables.
+    Returns:
+        MySQLConnection: a connection object to the database.
+    """
+    return mysql.connector.connect(
+        user=os.getenv("PERSONAL_DATA_DB_USERNAME", "root"),
+        password=os.getenv("PERSONAL_DATA_DB_PASSWORD", ""),
+        host=os.getenv("PERSONAL_DATA_DB_HOST", "localhost"),
+        database=os.getenv("PERSONAL_DATA_DB_NAME")
     )
