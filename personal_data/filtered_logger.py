@@ -24,7 +24,7 @@ re.sub to perform the substitution with a single regex.
 import re
 import logging
 import os
-import mysql.connector
+import mysql
 from typing import List
 
 PII_FIELDS = ("email", "name", "phone", "ssn", "password")
@@ -83,7 +83,7 @@ def filter_datum(
     )
 
 
-def get_db():
+def get_db() -> mysql.connector.connection.MySQLConnection:
     """
     Connects to a MySQL database using credentials from environment variables.
     Returns:
