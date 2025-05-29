@@ -26,6 +26,8 @@ import typing
 import logging
 from typing import List
 
+PII_FIELDS = ("ssn", "password", "ip", "last_login", "user_agent")
+
 
 class RedactingFormatter(logging.Formatter):
     """ Redacting Formatter class
@@ -49,6 +51,16 @@ class RedactingFormatter(logging.Formatter):
             super().format(record),
             self.SEPARATOR
         )
+
+
+def get_logger(self) -> logging.Logger:
+    logger = logging.getLogger("user_name")
+    logger.setLevel(logging.INFO)
+    logger.propagate = False
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(RedactingFormatter(list(PII_FIELDS)))
+    logger.addHandler(stream_handler)
+    return logger
 
 
 def filter_datum(
