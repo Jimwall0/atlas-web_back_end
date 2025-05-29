@@ -5,7 +5,7 @@ Encrypt your password
 import bcrypt
 
 
-def hash_password(password: str) -> str:
+def hash_password(password: str) -> bytes:
     """
     Encrypt password and salt it before return
     """
