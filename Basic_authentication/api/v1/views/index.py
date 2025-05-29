@@ -33,3 +33,12 @@ def no_auth():
     raises an unauthorized error
     """
     abort(401)
+
+
+@app_views.route('/forbidden', methods=['GET'], strict_slashes=False)
+def no_acess():
+    """
+    GET /api/v1/forbidden
+    User has auth but no acess
+    """
+    abort(403)
