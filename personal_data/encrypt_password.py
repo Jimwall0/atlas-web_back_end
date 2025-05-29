@@ -9,4 +9,4 @@ def hash_password(password: str) -> bytes:
     """
     Encrypt password and salt it before return
     """
-    return bcrypt.hashpw(password, bcrypt.gensalt())
+    return bcrypt.hashpw(password.encode(), bcrypt.gensalt())
