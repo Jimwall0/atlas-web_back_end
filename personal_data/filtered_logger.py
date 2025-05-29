@@ -24,7 +24,7 @@ re.sub to perform the substitution with a single regex.
 import re
 import logging
 import os
-import mysql
+import mysql.connector
 from typing import List
 
 PII_FIELDS = ("email", "name", "phone", "ssn", "password")
