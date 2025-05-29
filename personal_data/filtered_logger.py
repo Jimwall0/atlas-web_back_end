@@ -26,7 +26,7 @@ import typing
 import logging
 from typing import List
 
-PII_FIELDS = ("ssn", "password", "ip", "last_login", "user_agent")
+PII_FIELDS = ("email", "name", "phone", "ssn", "password")
 
 
 class RedactingFormatter(logging.Formatter):
