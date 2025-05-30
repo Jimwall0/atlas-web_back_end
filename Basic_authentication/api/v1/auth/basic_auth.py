@@ -22,4 +22,3 @@ class BasicAuth(Auth):
         if not re.search(r"(Basic\s)", authorization_header):
             return None
         return authorization_header[6:]
-        
