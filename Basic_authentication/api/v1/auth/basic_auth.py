@@ -14,6 +14,7 @@ class BasicAuth(Auth):
             self,
             authorization_header: str
     ) -> str:
+        """Extracts the base 64 from the authorization header"""
         if authorization_header is None:
             return None
         if not isinstance(authorization_header, str):
