@@ -3,6 +3,7 @@
 BasicAuth module
 """
 from api.v1.auth.auth import Auth
+from typing import TypeVar
 import re
 import base64
 
@@ -57,7 +58,11 @@ class BasicAuth(Auth):
         email, password = decoded_base64_authorization_header.split(':', 1)
         return email, password
 
-    def user_object_from_credentials(self, user_email: str, user_pwd: str) -> TypeVar('User'):
+    def user_object_from_credentials(
+            self,
+            user_email: str,
+            user_pwd: str
+    ) -> TypeVar('User'):
         """
         Returns a User instance if the credentials match.
         """
@@ -80,7 +85,10 @@ class BasicAuth(Auth):
 
         return user
 
-    def current_user(self, request=None) -> TypeVar('User'):
+    def current_user(
+            self,
+            request=None
+    ) -> TypeVar('User'):
         """
         Retrieves the User instance based on the request's Basic Auth header.
         """
