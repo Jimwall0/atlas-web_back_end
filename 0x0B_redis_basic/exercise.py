@@ -24,7 +24,6 @@ def count_calls(method: Callable) -> Callable:
     return wrapper
 
 
-
 class Cache:
     """
     Class setup to use Redis
@@ -33,6 +32,7 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb()
 
+    @count_calls
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """
         Sets up a key value paring and returns the key
