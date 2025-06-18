@@ -5,6 +5,7 @@ Write a string to Redis
 import redis
 import uuid
 from typing import Union, Optional, Callable, Any
+from functools import wraps
 
 
 def count_calls(method: Callable) -> Callable:
@@ -12,6 +13,7 @@ def count_calls(method: Callable) -> Callable:
     Makes a function that counts
     """
     key = method.__qualname__
+
     @wraps(method)
     def wrapper(self, *args, **kwargs) -> Any:
         """
