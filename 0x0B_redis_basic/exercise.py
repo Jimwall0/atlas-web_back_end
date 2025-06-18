@@ -92,3 +92,26 @@ class Cache:
         Returns an int value from Redis
         """
         return self.get(key, fn=lambda d: int(d))
+
+    def replay(self, method: Callable) -> None:
+        """Display the call history of a function."""
+        redis_client = redis.Redis()
+        qualname = method.__qualname__
+        inputs_key = qualname + ":inputs"
+        outputs_key = qualname + ":outputs"
+
+        call_count = redis_client.get(qualname)
+        try:
+            count = int(call_count) if call_count else 0
+        except ValueError:
+            count = 0
+
+        print(f"{qualname} was called {count} times:")
+
+        inputs = redis_client.lrange(inputs_key, 0, -1)
+        outputs = redis_client.lrange(outputs_key, 0, -1)
+
+        for input_, output in zip(inputs, outputs):
+            input_str = input_.decode("utf-8")
+            output_str = output.decode("utf-8")
+            print(f"{qualname}(*{input_str}) -> {output_str}")
