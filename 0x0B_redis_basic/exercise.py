@@ -4,7 +4,23 @@ Write a string to Redis
 """
 import redis
 import uuid
-from typing import Union, Optional, Callable
+from typing import Union, Optional, Callable, Any
+
+
+def count_calls(method: Callable) -> Callable:
+    """
+    Makes a function that counts
+    """
+    key = method.__qualname__
+    @wraps(method)
+    def wrapper(self, *args, **kwargs) -> Any:
+        """
+        Wrapper function that increments call count
+        """
+        self._redis.incr(key)
+        return method(self, *args, **kwargs)
+    return wrapper
+
 
 
 class Cache:
@@ -53,4 +69,7 @@ class Cache:
             self,
             key: str
     ) -> Optional[int]:
+        """
+        Returns an int value from Redis
+        """
         return self.get(key, fn=lambda d: int(d))
