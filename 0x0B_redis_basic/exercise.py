@@ -31,7 +31,7 @@ class Cache:
                     [bytes],
                     Union[str, bytes, int, float]
                 ]
-            ]
+            ] = None
     ) -> Optional[Union[str, int, float, bytes]]:
         """
         Returns data converted or not"""
