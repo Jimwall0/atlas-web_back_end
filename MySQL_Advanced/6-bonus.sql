@@ -1,3 +1,4 @@
+-- Check for this comment
 DELIMITER $$
 
 CREATE PROCEDURE AddBonus (
