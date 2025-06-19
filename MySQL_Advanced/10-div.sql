@@ -8,7 +8,7 @@ BEGIN
     IF b = 0 THEN
         RETURN 0;
     ELSE
-        RETURN FLOOR(a / b);
+        RETURN a DIV b;
     END IF;
 END$$
 
