@@ -1,5 +1,4 @@
 -- Rank country origins of bands by total number of fans
-USE holberton;
 SELECT
     origin,
     SUM(fans) AS nb_fans
