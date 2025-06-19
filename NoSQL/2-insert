@@ -1,3 +1,16 @@
 // insert a document into the collection school
-use my_db
-my_db.school.insertOne({ name: "Holberton school" });
+const { MongoClient } = require('mongodb');
+
+async function run() {
+  const client = new MongoClient('mongodb://localhost:27017');
+  try {
+    await client.connect();
+    const db = client.db('my_db');
+    const result = await db.collection('school').insertOne({ name: 'Holberton school' });
+    console.log('Inserted document id:', result.insertedId);
+  } finally {
+    await client.close();
+  }
+}
+
+run().catch(console.error);
