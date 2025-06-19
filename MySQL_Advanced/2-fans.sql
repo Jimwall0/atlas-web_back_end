@@ -1,12 +1,10 @@
--- Rank countyr origins of bands by total number of fans
+-- Rank country origins of bands by total number of fans
 SELECT
-    b.country,
-    COUNT(f.id) AS total_fans
+    origin,
+    SUM(fans_count) AS nb_fans
 FROM
-    bands b
-LEFT JOIN
-    fans f ON b.id = f.band_id
+    bands
 GROUP BY
-    b.country
+    origin
 ORDER BY
-    total_fans DESC;
+    nb_fans DESC;
