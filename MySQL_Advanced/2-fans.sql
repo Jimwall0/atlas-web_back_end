@@ -5,7 +5,7 @@ SELECT
 FROM
     bands b
 LEFT JOIN
-    fnas f ON b.id = f.band_id
+    fans f ON b.id = f.band_id
 GROUP BY
     b.country
 ORDER BY
