@@ -5,5 +5,5 @@ FROM students
 WHERE score < 80
   AND (
     last_meeting IS NULL
-    OR last_meeting < (CURRENT_DATE - INTERVAL 1 MONTH)
+    AND last_meeting < (CURRENT_DATE - INTERVAL 1 MONTH)
   );
