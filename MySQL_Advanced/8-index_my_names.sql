@@ -1,2 +1,3 @@
 -- simple querry on tables
-SELECT * FROM names WHERE name LIKE 'A%';
+CREATE INDEX idx_name_first
+ON names (name(1));
