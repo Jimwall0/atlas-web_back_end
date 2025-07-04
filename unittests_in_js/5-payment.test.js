@@ -1,5 +1,5 @@
 const sinon = require('sinon');
-const sendPaymentRequestToApi = require('/5-payment');
+const sendPaymentRequestToApi = require('./5-payment');
 
 describe('sendPaymentRequestToApi', function(){
     let logSpy;
