@@ -11,7 +11,7 @@ describe('calculateNumber', function () {
   
   describe('SUBTRACT', function(){
     it('should subtract two rounded numbers', function () {
-      assert.strictEqual(calculateNumber('SUB', 1.4, 4.5), -4) // 1 - 5
+      assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), -4) // 1 - 5
     })
   })
 });
