@@ -1,5 +1,5 @@
 const getPaymentTokenFromAPI = require('./6-payment_token');
-const sinon = require('sinon');
+const { expect } = require('chai');
 
 describe('getPaymentTokenFromAPI', function () {
   it('should resolve with correct response when success is true', async function () {
