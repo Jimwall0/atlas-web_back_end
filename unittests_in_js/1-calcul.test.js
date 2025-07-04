@@ -2,7 +2,9 @@ const assert = require('assert');
 const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', function () {
-  it('should round and sum two whole numbers', function () {
-    assert.strictEqual(calculateNumber(1, 3), 4);
+  describe('SUM', function(){
+    it('should add two rounded numbers', function () {
+      assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 6); // 1 + 5
+    });
   });
 });
