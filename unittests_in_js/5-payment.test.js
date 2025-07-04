@@ -1,5 +1,4 @@
 const sinon = require('sinon');
-const Utils = require('./utils');
 const sendPaymentRequestToApi = require('/5-payment');
 
 describe('sendPaymentRequestToApi', function(){
@@ -20,5 +19,5 @@ describe('sendPaymentRequestToApi', function(){
         sendPaymentRequestToApi(10, 10);
         sinon.assert.calledOnce(logSpy);
         sinon.assert.calledWithExactly(logSpy, 'The total is: 20');
-  });
+    });
 });
