@@ -12,7 +12,7 @@ app.get('/cart/:id', (req, res) => {
     if (!/^\d+$/.test(req.params.id)){
         return res.status(404).send('Not Found');
     }
-    res.send(`Payment methods for cart :${req.params.id}`);
+    res.send(`Payment methods for cart ${req.params.id}`);
 });
 
 if (require.main === module) {
