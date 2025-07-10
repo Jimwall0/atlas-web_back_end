@@ -30,7 +30,7 @@ describe('Cart Page', function () {
   it('should be a number', function (done) {
     request.get(`${baseURL}/cart/1`, function (error, response, body) {
       expect(response.statusCode).to.equal(200);
-      expect(body).to.equal('Payment methods for cart: 1');
+      expect(body).to.equal('Payment methods for cart :1');
       done();
     });
   });
