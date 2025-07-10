@@ -69,7 +69,7 @@ describe('Payment Page', function () {
     request.get(payments, function (error, response, body) {
       expect(response.statusCode).to.equal(200);
       expect(body).to.deep.equal({
-        payment_method: {
+        payment_methods: {
           credit_cards: true,
           paypal: false
         }
