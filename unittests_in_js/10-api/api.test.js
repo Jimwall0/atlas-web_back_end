@@ -59,4 +59,21 @@ describe('Login Page', function () {
   });
 });
 
-describe('')
+describe('Payment Page', function () {
+  it('should be an object', function (done) {
+    const payments = {
+      url: `${baseURL}/available_payments`,
+      method: 'GET',
+      json: true,
+    }
+    request.get(payments, function (done) {
+      expect(response.statusCode).to.equal(200);
+      expect(body).to.equal({
+        payment_method: {
+          credit_cards: true,
+          paypal: false
+        }
+      });
+    });
+  });
+});
