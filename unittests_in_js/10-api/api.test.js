@@ -60,7 +60,7 @@ describe('Login Page', function () {
 });
 
 describe('Payment Page', function () {
-  it('should be an object', function (done) {
+  it('should give me payment information', function (done) {
     const payments = {
       url: `${baseURL}/available_payments`,
       method: 'GET',
@@ -68,12 +68,13 @@ describe('Payment Page', function () {
     }
     request.get(payments, function (done) {
       expect(response.statusCode).to.equal(200);
-      expect(body).to.equal({
+      expect(body).to.deep.equal({
         payment_method: {
           credit_cards: true,
           paypal: false
-        };
+        }
       });
+      done();
     });
   });
 });
