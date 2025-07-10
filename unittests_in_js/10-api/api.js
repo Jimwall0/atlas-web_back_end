@@ -31,7 +31,7 @@ app.post('/login', (req, res) => {
   if (!req.body){
     return res.status(400).send('Missing userName');
   }
-  res.send(`Welcome ${req.body}`);
+  res.send(`Welcome ${req.body.userName}`);
 })
 
 if (require.main === module) {
