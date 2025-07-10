@@ -37,7 +37,7 @@ describe('Cart Page', function () {
   it('should not be a number', function (done) {
     request.get(`${baseURL}/cart/one`, function (error, response, body) {
       expect(response.statusCode).to.equal(404);
-      expect(body).to.equal('Not found');
+      expect(body).to.equal('Not Found');
       done();
     });
   });
