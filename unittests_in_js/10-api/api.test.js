@@ -72,7 +72,7 @@ describe('Payment Page', function () {
         payment_method: {
           credit_cards: true,
           paypal: false
-        }
+        };
       });
     });
   });
