@@ -20,7 +20,7 @@ app.get('/cart/:id', (req, res) => {
 
 app.get('/available_payments', (req, res) => {
   res.send({
-    payment_method: {
+    payment_methods: {
       credit_cards: true,
       paypal: false
     }
