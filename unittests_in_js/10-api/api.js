@@ -15,6 +15,23 @@ app.get('/cart/:id', (req, res) => {
     res.send(`Payment methods for cart ${req.params.id}`);
 });
 
+
+app.get('/available_payments', (req, res) => {
+  res.send({
+    payment_method: {
+      credit_cards: true,
+      paypal: false
+    }
+  });
+})
+
+app.put('/login', (req, res) => {
+  if (!req.body){
+    return res.status(400).send('Missing userName');
+  }
+  res.send(`Welcome ${userName}`);
+})
+
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`API available on localhost port ${PORT}`);
