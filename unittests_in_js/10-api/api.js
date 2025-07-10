@@ -25,11 +25,11 @@ app.get('/available_payments', (req, res) => {
   });
 })
 
-app.put('/login', (req, res) => {
+app.post('/login', (req, res) => {
   if (!req.body){
     return res.status(400).send('Missing userName');
   }
-  res.send(`Welcome ${userName}`);
+  res.send(`Welcome ${req.body}`);
 })
 
 if (require.main === module) {

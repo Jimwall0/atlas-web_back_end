@@ -43,4 +43,20 @@ describe('Cart Page', function () {
   });
 });
 
-describe
+describe('Login Page', function () {
+  it('should be an object', function (done) {
+    const custom = {
+      url: `${baseURL}/login`,
+      method: 'POST',
+      json: true,
+      body: { userName: 'Pan' }
+    };
+    request.post(custom, function (error, response, body) {
+      expect(response.statusCode).to.equal(200);
+      expect(body).to.equal('Welcome Pan');
+      done();
+    });
+  });
+});
+
+describe('')
