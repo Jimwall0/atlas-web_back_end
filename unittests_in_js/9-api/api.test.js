@@ -25,3 +25,20 @@ describe('Index page', function () {
     });
   });
 });
+
+describe('Cart Page', function () {
+  it('should be a number', function (done) {
+    request.get(`${baseURL}/cart/1`, function (error, response, body) {
+      expect(response.statusCode).to.equal(200);
+      expect(body).to.equal('Payment methods for cart: 1');
+      done();
+    });
+  });
+  it('should not be a number', function (done) {
+    request.get(`${baseURL}/cart/one`, function (error, response, body) {
+      expect(response.statusCode).to.equal(404);
+      expect(body).to.equal('Not found');
+      done();
+    });
+  });
+})
